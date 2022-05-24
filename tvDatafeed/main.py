@@ -269,9 +269,9 @@ class TvDatafeed:
                 self.chromedriver_path, desired_capabilities=caps, options=options
             )
 
-            logger.debug("opening https://in.tradingview.com ")
+            logger.debug("opening https://tradingview.com ")
             driver.set_window_size(1920, 1080)
-            driver.get("https://in.tradingview.com")
+            driver.get("https://tradingview.com")
             time.sleep(5)
 
             return driver
