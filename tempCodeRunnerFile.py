@@ -1,0 +1,1 @@
+TC_ZERO_SEK["turnover"])

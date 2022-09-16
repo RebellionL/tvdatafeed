@@ -144,11 +144,11 @@ class TvDatafeed:
         token = None
         token = self.auth(username, password)
 
+        
         if token is None:
             token = "unauthorized_user_token"
-            logger.warning(
-                "you are using nologin method, data you access may be limited"
-            )
+            
+        
 
         self.token = token
         self.ws = None
