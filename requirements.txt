@@ -1,4 +1,3 @@
-from tvDatafeed import TvDatafeed,Interval
 streamlit==1.12.2
 pandas==1.4.3
 plotly==5.9.0
