@@ -1,5 +1,6 @@
-setuptools~=49.2.0
-pandas~=1.0.5
-selenium~=3.141.0
-websocket-client~=0.57.0
-chromedriver-autoinstaller
+streamlit==1.12.2
+pandas==1.4.3
+plotly==5.9.0
+numpy==1.21.5
+
+
