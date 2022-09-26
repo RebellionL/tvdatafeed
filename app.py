@@ -1,5 +1,4 @@
 from tvDatafeed import TvDatafeed,Interval
-import mplfinance as mpf
 import pandas as pd
 import cufflinks as cf
 import numpy as np
