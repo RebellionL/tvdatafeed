@@ -501,6 +501,74 @@ fig_ETC_xetr_monthly.add_trace(go.Scatter
     showlegend=False
 ))
 
+#Last of the month
+ETC_Last = ETC_xetr_Monthly.iloc[-1]
+Valour_Last = Valour_Monthly.iloc[-1]
+XBT_Last = XBT_Monthly.iloc[-1]
+Shares21_six_last = shares21_six_Monthly.iloc[-1]
+Shares21_xetr_last = shares21_xetr_Monthly.iloc[-1]
+
+#concat all Last
+All_Last = pd.concat([ETC_Last, Valour_Last, XBT_Last, Shares21_six_last, Shares21_xetr_last], axis=1)
+
+#rows as columns
+All_Last = All_Last.transpose()
+
+#all on one row
+All_Last = All_Last.sum(axis=0)
+
+
+
+#Pie chart with all sums
+fig_All_Last = px.pie(All_Last, values=All_Last.values, names=All_Last.index)
+fig_All_Last.update_traces(textposition='inside', textinfo='percent')
+fig_All_Last.update_layout(
+    title={
+        'text': 'ALL PRODUCTS MONTHLY TURNOVER COMPARISON',
+        'y':0.95,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'
+    },
+    showlegend=True
+
+)
+
+
+#Last - 1 month
+ETC_Last_1 = ETC_xetr_Monthly.iloc[-2]
+Valour_Last_1 = Valour_Monthly.iloc[-2]
+XBT_Last_1 = XBT_Monthly.iloc[-2]
+Shares21_six_last_1 = shares21_six_Monthly.iloc[-2]
+Shares21_xetr_last_1 = shares21_xetr_Monthly.iloc[-2]
+
+#concat all Last -1
+All_Last_1 = pd.concat([ETC_Last_1, Valour_Last_1, XBT_Last_1, Shares21_six_last_1, Shares21_xetr_last_1], axis=1)
+
+#rows as columns
+All_Last_1 = All_Last_1.transpose()
+
+#all on one row
+All_Last_1 = All_Last_1.sum(axis=0)
+
+#Pie chart with all sums
+fig_All_Last_1 = px.pie(All_Last_1, values=All_Last_1.values, names=All_Last_1.index)
+fig_All_Last_1.update_traces(textposition='inside', textinfo='percent')
+fig_All_Last_1.update_layout(
+    title={
+        'text': 'ALL PRODUCTS MONTHLY TURNOVER COMPARISON LAST MONTH',
+        'y':0.95,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'
+    },
+    showlegend=True
+
+)
+
+
+
+
 
 
 st.title('Valour Dashboard')
@@ -510,6 +578,9 @@ st.plotly_chart(fig_xbt_monthly, use_container_width=True)
 st.plotly_chart(fig_shares21_xetr_monthly, use_container_width=True)
 st.plotly_chart(fig_shares21_six_monthly, use_container_width=True)
 st.plotly_chart(fig_ETC_xetr_monthly, use_container_width=True)
+st.plotly_chart(fig_All_Last, use_container_width=True)
+st.plotly_chart(fig_All_Last_1, use_container_width=True)
+
 
 
 hide_streamlit_style = """
@@ -518,4 +589,4 @@ hide_streamlit_style = """
             footer {visibility: hidden;}
             </style>
             """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
