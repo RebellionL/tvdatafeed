@@ -69,7 +69,7 @@ pd_VALOUR_AVLANCHE_SEK["turnover"] = (pd_VALOUR_AVLANCHE_SEK["averageprice"] * p
 pd_VALOUR_AVLANCHE_SEK["turnover"].astype(int)
 
 #Valour Products
-Valour = pd.concat([pd_BTC_ZERO_SEK, pd_ETH_ZERO_SEK, pd_VALOUR_CARDANO_SEK, pd_VALOUR_POLKADOT_SEK, pd_VALOUR_UNISWAP_SEK, pd_VALOUR_AVLANCHE_SEK])
+Valour = pd.concat([pd_BTC_ZERO_SEK, pd_ETH_ZERO_SEK, pd_VALOUR_CARDANO_SEK, pd_VALOUR_SOLANA_SEK,pd_VALOUR_POLKADOT_SEK, pd_VALOUR_UNISWAP_SEK, pd_VALOUR_AVLANCHE_SEK])
 Valour['Date'] = pd.to_datetime(Valour.index.date)
 Valour.set_index(Valour['Date'], drop=True, inplace=True)
 Valour.drop(['Date'], axis=1, inplace=True)
