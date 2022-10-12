@@ -27,13 +27,13 @@ EURUSD_Mean = EUR_USD["close"].mean()
 #VALOUR
 
 #VALOUR BTC ZERO SEK
-pd_BTC_ZERO_SEK=tv.get_hist('BTC.ZERO.SEK','NGM',interval=Interval.in_daily,n_bars=300)
+pd_BTC_ZERO_SEK=tv.get_hist('VALOUR.BTC.ZERO.SEK','NGM',interval=Interval.in_daily,n_bars=300)
 pd_BTC_ZERO_SEK["averageprice"] = (pd_BTC_ZERO_SEK["high"] + pd_BTC_ZERO_SEK["open"] + pd_BTC_ZERO_SEK["close"] + pd_BTC_ZERO_SEK["low"]) /4
 pd_BTC_ZERO_SEK["turnover"] = (pd_BTC_ZERO_SEK["averageprice"] * pd_BTC_ZERO_SEK["volume"])/USDSEK_Mean
 pd_BTC_ZERO_SEK["turnover"].astype(int)
 
 #VALOUR ETH ZERO SEK
-pd_ETH_ZERO_SEK=tv.get_hist('ETH.ZERO.SEK','NGM',interval=Interval.in_daily,n_bars=300)
+pd_ETH_ZERO_SEK=tv.get_hist('VALOUR.ETH.ZERO.SEK','NGM',interval=Interval.in_daily,n_bars=300)
 pd_ETH_ZERO_SEK["averageprice"] = (pd_ETH_ZERO_SEK["high"] + pd_ETH_ZERO_SEK["open"] + pd_ETH_ZERO_SEK["close"] + pd_ETH_ZERO_SEK["low"]) /4
 pd_ETH_ZERO_SEK["turnover"] = (pd_ETH_ZERO_SEK["averageprice"] * pd_ETH_ZERO_SEK["volume"])/USDSEK_Mean
 pd_ETH_ZERO_SEK["turnover"].astype(int)
